@@ -1,4 +1,71 @@
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
+@import "https://assortment-ui.netlify.app/styles.css";
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  border-bottom: 0.0625rem solid black;
+}
+
+.logo {
+  font-size: 1.3rem;
+  margin-right: 3rem;
+}
+
+.search-container {
+  width: 30%;
+  display: flex;
+}
+
+.search-container__search-box {
+  width: 100%;
+}
+
+.search-container__button {
+  cursor: pointer;
+  padding: 0 0.5rem;
+}
+
+.avatar {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.container {
+  display: flex;
+  position: relative;
+}
+
+.navigation-bar {
+  display: flex;
+  flex-direction: column;
+  border-right: 0.0625rem solid black;
+  height: calc(100vh - 4rem);
+  position: fixed;
+}
+
+.navigation-bar__item {
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.navigation-bar__item:hover {
+  background-color: grey;
+}
+
+.icon {
+  margin-right: 2rem;
 }
