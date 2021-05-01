@@ -16,6 +16,9 @@ header {
   display: flex;
   justify-content: center;
   border-bottom: 0.0625rem solid black;
+  position: sticky;
+  top: 0px;
+  background-color: white;
 }
 
 .logo {
@@ -45,16 +48,17 @@ header {
 
 .container {
   display: flex;
-  position: relative;
 }
 
 .navigation-bar {
   display: flex;
   flex-direction: column;
   border-right: 0.0625rem solid black;
-  height: calc(100vh - 4rem);
+  height: calc(100vh - 57.8px);
   margin-right: 1rem;
   position: sticky;
+  top: 57.8px;
+  background-color: white;
 }
 
 .navigation-bar__item {
@@ -76,6 +80,7 @@ header {
   padding-top: 1.5rem;
   display: flex;
   flex-wrap: wrap;
+  z-index: -1;
 }
 
 .content {
