@@ -1,9 +1,13 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <header>
-      <div className="logo">
-        Video <i className="fas fa-video"></i> Station
-      </div>
+      <Link className="header__link" to="/">
+        <div className="logo">
+          Video <i className="fas fa-video"></i> Station
+        </div>
+      </Link>
 
       <div className="search-container">
         <input
