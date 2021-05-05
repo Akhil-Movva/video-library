@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const VideoContent = ({ item }) => {
-  const [display, setDisplay] = useState("none");
+  const [visibililty, setVisibility] = useState("hidden");
 
-  const iconStyle = { display: display };
+  const iconStyle = { visibility: visibililty };
 
   return (
     <div
-      onMouseOver={() => setDisplay("inherit")}
-      onMouseLeave={() => setDisplay("none")}
+      onMouseOver={() => setVisibility("visible")}
+      onMouseLeave={() => setVisibility("hidden")}
       tabIndex="0"
       key={item.id}
       className="content"
