@@ -1,10 +1,9 @@
 export const videos = [
   {
     id: 1,
-    thumbnail: "https://img.youtube.com/vi/07d2dXHYb94/mqdefault.jpg",
-    title: "Pip | A Short Animated Film by Southeastern Guide Dogs",
-    url:
-      "https://www.youtube.com/watch?v=07d2dXHYb94&t=11s&ab_channel=SoutheasternGuideDogs"
+    thumbnail: "https://img.youtube.com/vi/m3d3DhL4Tvo/mqdefault.jpg",
+    title: "Chhota Bheem- Rangeen Patang Ki Kahani",
+    url: "https://www.youtube.com/watch?v=m3d3DhL4Tvo&ab_channel=GreenGold"
   },
   {
     id: 2,
@@ -22,10 +21,9 @@ export const videos = [
 
   {
     id: 4,
-    thumbnail: "https://img.youtube.com/vi/ZXcTvbLwsRs/mqdefault.jpg",
-    title: "Kindness & Joy (Short Animated Video)",
-    url:
-      "https://www.youtube.com/watch?v=ZXcTvbLwsRs&t=2s&ab_channel=InspirationQuest%26MoviReviews"
+    thumbnail: "https://img.youtube.com/vi/CpiqG-7QLkQ/mqdefault.jpg",
+    title: "The Animated History of Every Flash! [DC Comics]",
+    url: "https://www.youtube.com/watch?v=CpiqG-7QLkQ&ab_channel=NoahSterling"
   },
   {
     id: 5,

@@ -36,6 +36,15 @@ header {
   width: 100%;
 }
 
+/*.fa-ellipsis-v{
+  display:none;
+}
+
+.fa-ellipsis-v:hover{
+  display:inherit;
+
+}*/
+
 .search-container__button {
   cursor: pointer;
   padding: 0 0.5rem;
@@ -88,6 +97,11 @@ header {
   margin-right: 1rem;
   margin-bottom: 3rem;
   cursor: pointer;
+  text-align: left;
+}
+
+.content:focus {
+  outline: grey solid 0.125rem;
 }
 
 .content__link,
@@ -96,9 +110,20 @@ header {
   color: inherit;
 }
 
-.content__title {
+.content__details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__details__title {
   font-weight: 600;
   margin-top: 0.5rem;
+}
+
+.content__details__button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .video-player {
