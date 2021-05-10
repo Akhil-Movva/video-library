@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const NavigationBar = () => {
   return (
     <div className="navigation-bar">
@@ -18,9 +20,14 @@ export const NavigationBar = () => {
         <i className=" icon fas fa-history"></i>History
       </div>
 
-      <div className="navigation-bar__item">
-        <i className="icon fas fa-clock"></i>Watch later
-      </div>
+      <Link
+        style={{ textDecoration: "none", color: "inherit", width: "inherit" }}
+        to="/watchlater"
+      >
+        <div className="navigation-bar__item">
+          <i className="icon fas fa-clock"></i>Watch later
+        </div>
+      </Link>
 
       <div className="navigation-bar__item">
         <i className="icon fas fa-thumbs-up"></i>Liked videos

@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { MenuListBox } from "./MenuListBox";
 
 export const VideoContent = ({ item }) => {
   const [visibililty, setVisibility] = useState("hidden");
+  const [listBoxDisplay, setListBoxDisplay] = useState("none");
 
   const iconStyle = { visibility: visibililty };
+  const listBoxStyle = { display: listBoxDisplay };
 
   return (
     <div
       onMouseOver={() => setVisibility("visible")}
       onMouseLeave={() => setVisibility("hidden")}
       tabIndex="0"
-      key={item.id}
       className="content"
     >
       <Link className="content__link" to={`/video/${item.id}`}>
@@ -21,7 +23,17 @@ export const VideoContent = ({ item }) => {
         <Link className="content__link" to={`/video/${item.id}`}>
           <div className="content__details__title">{item.title}</div>
         </Link>
-        <button className="content__details__button">
+        <MenuListBox video={item} listBoxStyle={listBoxStyle} />
+        <button
+          onClick={() => {
+            if (listBoxDisplay === "block") {
+              setListBoxDisplay("none");
+            } else {
+              setListBoxDisplay("block");
+            }
+          }}
+          className="content__details__menu-button"
+        >
           <i style={iconStyle} className="fas fa-ellipsis-v"></i>
         </button>
       </div>

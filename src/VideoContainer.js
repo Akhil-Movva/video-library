@@ -5,7 +5,7 @@ export const VideoContainer = () => {
   return (
     <div className="video-container">
       {videos.map((item) => (
-        <VideoContent item={item} />
+        <VideoContent key={item.id} item={item} />
       ))}
     </div>
   );
