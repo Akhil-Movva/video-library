@@ -1,11 +1,18 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export const NavigationBar = () => {
   return (
     <div className="navigation-bar">
-      <div className="navigation-bar__item">
-        <i className="icon fas fa-home"></i>Home
-      </div>
+      <NavLink
+        end
+        style={{ textDecoration: "none", color: "inherit", width: "inherit" }}
+        activeStyle={{ backgroundColor: "grey" }}
+        to="/"
+      >
+        <div className="navigation-bar__item">
+          <i className="icon fas fa-home"></i>Home
+        </div>
+      </NavLink>
 
       <div className="navigation-bar__item">
         <i className="icon fas fa-compass"></i>Explore
@@ -20,14 +27,15 @@ export const NavigationBar = () => {
         <i className=" icon fas fa-history"></i>History
       </div>
 
-      <Link
+      <NavLink
         style={{ textDecoration: "none", color: "inherit", width: "inherit" }}
+        activeStyle={{ backgroundColor: "grey" }}
         to="/watchlater"
       >
         <div className="navigation-bar__item">
           <i className="icon fas fa-clock"></i>Watch later
         </div>
-      </Link>
+      </NavLink>
 
       <div className="navigation-bar__item">
         <i className="icon fas fa-thumbs-up"></i>Liked videos

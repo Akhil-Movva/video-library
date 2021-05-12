@@ -71,7 +71,7 @@ header {
 }
 
 .navigation-bar__item:hover {
-  background-color: grey;
+  background-color: lightgrey;
 }
 
 .icon {
@@ -113,13 +113,21 @@ header {
   font-weight: 600;
 }
 
+.watch-later-content__menu-button,
 .content__details__menu-button {
-  background-color: white;
+  background-color: inherit;
   border: none;
   cursor: pointer;
   height: 25px;
   padding: 5px 8px;
 }
+
+.watch-later-content__menu-button {
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+}
+
 .content__details__menu-button:active {
   border: 2px solid grey;
   border-radius: 2.2rem;
@@ -158,4 +166,25 @@ header {
 
 .menu-listbox__item:hover {
   background-color: grey;
+}
+
+.watch-later-content {
+  display: flex;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.watch-later-content:hover {
+  background-color: lightgrey;
+}
+
+.watch-later-content__img {
+  width: 7.5rem;
+  margin-right: 0.5rem;
+}
+
+.watch-later-container {
+  margin: 1rem auto;
+  width: 70%;
 }

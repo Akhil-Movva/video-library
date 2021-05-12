@@ -1,7 +1,7 @@
-import { useProduct } from "./VideoContext";
+import { useVideo } from "./VideoContext";
 
 export const MenuListBox = ({ video, listBoxStyle }) => {
-  const { dispatch } = useProduct();
+  const { dispatch } = useVideo();
 
   return (
     <div style={listBoxStyle} className="menu-listbox">

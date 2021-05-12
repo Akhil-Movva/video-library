@@ -24,6 +24,6 @@ export const VideoProvider = ({ children }) => {
   );
 };
 
-export const useProduct = () => {
+export const useVideo = () => {
   return useContext(VideoContext);
 };
