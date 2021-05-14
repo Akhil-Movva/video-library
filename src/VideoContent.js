@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuListBox } from "./MenuListBox";
+import { videoContentMenuItemData } from "./MenuListItemData";
 
 export const VideoContent = ({ item }) => {
   const [visibililty, setVisibility] = useState("hidden");
@@ -23,7 +24,11 @@ export const VideoContent = ({ item }) => {
         <Link className="content__link" to={`/video/${item.id}`}>
           <div className="content__details__title">{item.title}</div>
         </Link>
-        <MenuListBox video={item} listBoxStyle={listBoxStyle} />
+        <MenuListBox
+          items={videoContentMenuItemData}
+          video={item}
+          listBoxStyle={listBoxStyle}
+        />
         <button
           onClick={() => {
             if (listBoxDisplay === "block") {

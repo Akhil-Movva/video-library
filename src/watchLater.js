@@ -14,7 +14,7 @@ export const WatchLater = () => {
         <div style={{ fontSize: "1.5rem", margin: "1rem 0" }}>Watch later</div>
         <div className="watch-later-container">
           {watchLater.map((item) => (
-            <WatchLaterContent item={item} />
+            <WatchLaterContent key={item.id} item={item} />
           ))}
         </div>
       </div>
