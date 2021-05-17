@@ -1,10 +1,10 @@
 import { MenuListItem } from "./MenuListItem";
 
-export const MenuListBox = ({ video, listBoxStyle, items }) => {
+export const MenuListBox = ({ video, listBoxStyle, items, className }) => {
   return (
-    <div style={listBoxStyle} className="menu-listbox">
-      {items.map((item) => (
-        <MenuListItem video={video} item={item} />
+    <div style={listBoxStyle} className={className}>
+      {items.map((item, index) => (
+        <MenuListItem key={index} video={video} item={item} />
       ))}
     </div>
   );

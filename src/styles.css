@@ -1,6 +1,11 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css";
 @import "https://assortment-ui.netlify.app/styles.css";
 
+:root {
+  --toast-bgcolor: #323232;
+  --toast-color: #f1f1f1;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -154,14 +159,23 @@ header {
 }
 
 .menu-listbox {
-  width: 15rem;
   padding: 0.25rem 0;
   position: absolute;
   background-color: white;
-  top: 2.5rem;
-  left: 3rem;
   border-radius: 0.25rem;
   border: 2px solid whitesmoke;
+}
+
+.vid-menu {
+  width: 15rem;
+  top: 2.5rem;
+  left: 3rem;
+}
+
+.wl-menu {
+  width: 16rem;
+  right: 0.5rem;
+  bottom: -2.5rem;
 }
 
 .menu-listbox__item {
@@ -183,6 +197,7 @@ header {
   padding: 0.5rem 0;
   cursor: pointer;
   position: relative;
+  text-align: left;
 }
 
 .watch-later-content:hover {
@@ -197,4 +212,14 @@ header {
 .watch-later-container {
   margin: 1rem auto;
   width: 70%;
+}
+
+.toast {
+  width: 16%;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  background-color: var(--toast-bgcolor);
+  padding: 0.25rem 0.5rem;
+  color: var(--toast-color);
 }

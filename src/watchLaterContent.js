@@ -1,8 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { watchLaterContentMenuItemData } from "./MenuListItemData";
+import { MenuListBox } from "./MenuListBox";
 
 export const WatchLaterContent = ({ item }) => {
   const [visibililty, setVisibility] = useState("hidden");
+  const [listBoxDisplay, setListBoxDisplay] = useState("none");
+  const listBoxStyle = { display: listBoxDisplay };
+
   const iconStyle = { visibility: visibililty };
 
   return (
@@ -23,7 +28,22 @@ export const WatchLaterContent = ({ item }) => {
         <Link className="content__link" to={`/video/${item.id}`}>
           <div style={{ width: "75%", textAlign: "left" }}>{item.title}</div>
         </Link>
-        <button className="watch-later-content__menu-button">
+        <MenuListBox
+          items={watchLaterContentMenuItemData}
+          video={item}
+          listBoxStyle={listBoxStyle}
+          className="wl-menu menu-listbox"
+        />
+        <button
+          onClick={() => {
+            if (listBoxDisplay === "block") {
+              setListBoxDisplay("none");
+            } else {
+              setListBoxDisplay("block");
+            }
+          }}
+          className="watch-later-content__menu-button"
+        >
           <i style={iconStyle} className="fas fa-ellipsis-v"></i>
         </button>
       </div>

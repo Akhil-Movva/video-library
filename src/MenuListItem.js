@@ -1,15 +1,29 @@
 import { useVideo } from "./VideoContext";
+import { useToast } from "./ToastContext";
 
 export const MenuListItem = ({
   video,
-  item: { iconClass, actionType, itemName }
+  item: {
+    iconClass,
+    videoAction,
+    itemName,
+    toggleAction,
+    toastText,
+    setTextAction
+  }
 }) => {
   const { dispatch } = useVideo();
+  const { toastDispatch } = useToast();
 
   return (
     <div
       onClick={() => {
-        dispatch({ type: actionType, payload: video });
+        dispatch({ type: videoAction, payload: video });
+        toastDispatch({ type: toggleAction });
+        toastDispatch({ type: setTextAction, payload: toastText });
+        setTimeout(() => {
+          toastDispatch({ type: toggleAction });
+        }, 5000);
       }}
       className="menu-listbox__item"
     >

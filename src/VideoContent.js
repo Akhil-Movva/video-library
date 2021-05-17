@@ -28,6 +28,7 @@ export const VideoContent = ({ item }) => {
           items={videoContentMenuItemData}
           video={item}
           listBoxStyle={listBoxStyle}
+          className="vid-menu menu-listbox"
         />
         <button
           onClick={() => {
