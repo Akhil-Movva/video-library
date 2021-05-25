@@ -37,9 +37,15 @@ export const NavigationBar = () => {
         </div>
       </NavLink>
 
-      <div className="navigation-bar__item">
-        <i className="icon fas fa-thumbs-up"></i>Liked videos
-      </div>
+      <NavLink
+        style={{ textDecoration: "none", color: "inherit", width: "inherit" }}
+        activeStyle={{ backgroundColor: "grey" }}
+        to="/likedVideos"
+      >
+        <div className="navigation-bar__item">
+          <i className="icon fas fa-thumbs-up"></i>Liked videos
+        </div>
+      </NavLink>
 
       <hr style={{ margin: "0.5rem 0" }} />
     </div>

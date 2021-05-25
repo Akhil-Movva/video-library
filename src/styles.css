@@ -127,6 +127,13 @@ header {
   padding: 5px 8px;
 }
 
+.video-player__details__button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 3px;
+}
+
 .watch-later-content__menu-button {
   position: absolute;
   right: 1rem;
@@ -145,6 +152,12 @@ header {
   background-color: grey;
 }
 
+.video-player__details__button:active {
+  border: 2px solid lightgrey;
+  border-radius: 2.2rem;
+  background-color: lightgrey;
+}
+
 .video-player {
   position: relative;
   margin-top: 2rem;
@@ -153,8 +166,12 @@ header {
   text-align: left;
 }
 
-.video-player__title {
-  margin-top: 1rem;
+.video-player__details {
+  position: relative;
+}
+
+.video-player__details__title {
+  margin: 1rem 0 0.5rem 0;
   font-size: 1.1rem;
 }
 

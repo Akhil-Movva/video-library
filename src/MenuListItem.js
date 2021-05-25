@@ -23,7 +23,7 @@ export const MenuListItem = ({
         toastDispatch({ type: setTextAction, payload: toastText });
         setTimeout(() => {
           toastDispatch({ type: toggleAction });
-        }, 5000);
+        }, 3000);
       }}
       className="menu-listbox__item"
     >

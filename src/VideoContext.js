@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
+import { videos } from "./db";
 
 const VideoContext = createContext();
 
@@ -25,6 +26,28 @@ const reduceFunc = (state, action) => {
       return { ...state, watchLater: arr };
     }
 
+    case "TOGGLE_LIKE_VIDEO": {
+      const video = action.payload;
+      const videoList = state.videoList;
+      const videoArr = videoList.map((item) => {
+        if (item.id === video.id) {
+          return { ...item, isLiked: !item.isLiked };
+        } else return item;
+      });
+
+      if (!video.isLiked) {
+        return {
+          ...state,
+          videoList: videoArr,
+          likedVideos: [...state.likedVideos, video]
+        };
+      } else {
+        const likedList = state.likedVideos;
+        const likedArr = likedList.filter((item) => item.id !== video.id);
+        return { ...state, videoList: videoArr, likedVideos: likedArr };
+      }
+    }
+
     default:
       return state;
   }
@@ -32,7 +55,9 @@ const reduceFunc = (state, action) => {
 
 export const VideoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reduceFunc, {
-    watchLater: []
+    videoList: videos,
+    watchLater: [],
+    likedVideos: []
   });
   return (
     <VideoContext.Provider value={{ state, dispatch }}>

@@ -1,10 +1,14 @@
 import { VideoContent } from "./VideoContent";
-import { videos } from "./db";
+import { useVideo } from "./VideoContext";
 
 export const VideoContainer = () => {
+  const {
+    state: { videoList }
+  } = useVideo();
+
   return (
     <div className="video-container">
-      {videos.map((item) => (
+      {videoList.map((item) => (
         <VideoContent key={item.id} item={item} />
       ))}
     </div>
