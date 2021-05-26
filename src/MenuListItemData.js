@@ -35,3 +35,21 @@ export const watchLaterContentMenuItemData = [
     setTextAction: "SET_WATCH_LATER_TOAST_TEXT"
   }
 ];
+
+export const likedVideoContentMenuItemData = [
+  {
+    iconClass: "icon fas fa-clock",
+    itemName: "Save to Watch later",
+    videoAction: "ADD_TO_WATCH_LATER"
+  },
+  {
+    iconClass: "icon fas fa-list-ul",
+    itemName: "Save to playlist",
+    videoAction: "SAVE_TO_PLAYLIST"
+  },
+  {
+    iconClass: "icon fas fa-trash",
+    itemName: "Remove from Liked videos",
+    videoAction: "REMOVE_FROM_LIKED_VIDEOS"
+  }
+];

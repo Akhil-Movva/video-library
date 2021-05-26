@@ -119,7 +119,8 @@ header {
 }
 
 .watch-later-content__menu-button,
-.content__details__menu-button {
+.content__details__menu-button,
+.liked-video-content__menu-button {
   background-color: inherit;
   border: none;
   cursor: pointer;
@@ -140,6 +141,12 @@ header {
   top: 2rem;
 }
 
+.liked-video-content__menu-button {
+  position: absolute;
+  right: 1rem;
+  top: 2rem;
+}
+
 .content__details__menu-button:active {
   border: 2px solid lightgrey;
   border-radius: 2.2rem;
@@ -147,6 +154,12 @@ header {
 }
 
 .watch-later-content__menu-button:active {
+  border: 2px solid lightgrey;
+  border-radius: 2.2rem;
+  background-color: grey;
+}
+
+.liked-video-content__menu-button:active {
   border: 2px solid lightgrey;
   border-radius: 2.2rem;
   background-color: grey;
@@ -181,6 +194,7 @@ header {
   background-color: white;
   border-radius: 0.25rem;
   border: 2px solid whitesmoke;
+  z-index: 1;
 }
 
 .vid-menu {
@@ -190,9 +204,15 @@ header {
 }
 
 .wl-menu {
+  bottom: -2.5rem;
+}
+.lv-menu {
+  bottom: -4.5rem;
+}
+.wl-menu,
+.lv-menu {
   width: 16rem;
   right: 0.5rem;
-  bottom: -2.5rem;
 }
 
 .menu-listbox__item {
@@ -209,7 +229,8 @@ header {
   background-color: grey;
 }
 
-.watch-later-content {
+.watch-later-content,
+.liked-video-content {
   display: flex;
   padding: 0.5rem 0;
   cursor: pointer;
@@ -221,12 +242,18 @@ header {
   background-color: lightgrey;
 }
 
-.watch-later-content__img {
+.liked-video-content:hover {
+  background-color: lightgrey;
+}
+
+.watch-later-content__img,
+.liked-video-content__img {
   width: 7.5rem;
   margin-right: 0.5rem;
 }
 
-.watch-later-container {
+.watch-later-container,
+.liked-videos-container {
   margin: 1rem auto;
   width: 70%;
 }
