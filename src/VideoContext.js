@@ -48,6 +48,19 @@ const reduceFunc = (state, action) => {
       }
     }
 
+    case "REMOVE_FROM_LIKED_VIDEOS": {
+      const video = action.payload;
+      const likedVideos = state.likedVideos;
+      const videoList = state.videoList;
+      const arr = likedVideos.filter((item) => item.id !== video.id);
+      const videoArr = videoList.map((item) => {
+        if (item.id === video.id) {
+          return { ...item, isLiked: false };
+        } else return item;
+      });
+
+      return { ...state, likedVideos: arr, videoList: videoArr };
+    }
     default:
       return state;
   }
