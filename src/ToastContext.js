@@ -32,6 +32,13 @@ const reduceFunc = (state, action) => {
       return { ...state, likedVideosToastVisibility: "hidden" };
     }
 
+    case "TOGGLE_HISTORY_TOAST_VISIBILITY": {
+      if (state.historyToastVisibility === "hidden")
+        return { ...state, historyToastVisibility: "visible" };
+
+      return { ...state, historyToastVisibility: "hidden" };
+    }
+
     case "SET_VIDEO_TOAST_TEXT": {
       return { ...state, videoToastText: action.payload };
     }
@@ -48,6 +55,10 @@ const reduceFunc = (state, action) => {
       return { ...state, videoPlayerToastText: action.payload };
     }
 
+    case "SET_HISTORY_TOAST_TEXT": {
+      return { ...state, historyToastText: action.payload };
+    }
+
     default:
       return state;
   }
@@ -62,7 +73,9 @@ export const ToastProvider = ({ children }) => {
     likedVideosToastVisibility: "hidden",
     likedVideosToastText: "",
     videoPlayerToastVisibility: "hidden",
-    videoPlayerToastText: ""
+    videoPlayerToastText: "",
+    historyToastVisibility: "hidden",
+    historyToastText: ""
   });
   return (
     <ToastContext.Provider value={{ toastState, toastDispatch }}>

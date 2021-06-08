@@ -2,10 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuListBox } from "./MenuListBox";
 import { videoContentMenuItemData } from "./MenuListItemData";
+import { useVideo } from "./VideoContext";
 
 export const VideoContent = ({ item }) => {
   const [visibililty, setVisibility] = useState("hidden");
   const [listBoxDisplay, setListBoxDisplay] = useState("none");
+
+  const { dispatch } = useVideo();
 
   const iconStyle = { visibility: visibililty };
   const listBoxStyle = { display: listBoxDisplay };
@@ -18,11 +21,21 @@ export const VideoContent = ({ item }) => {
       className="content"
     >
       <Link className="content__link" to={`/video/${item.id}`}>
-        <img className="img-responsive" src={item.thumbnail} alt="video" />
+        <img
+          onClick={() => dispatch({ type: "ADD_TO_HISTORY", payload: item })}
+          className="img-responsive"
+          src={item.thumbnail}
+          alt="video"
+        />
       </Link>
       <div className="content__details">
         <Link className="content__link" to={`/video/${item.id}`}>
-          <div className="content__details__title">{item.title}</div>
+          <div
+            onClick={() => dispatch({ type: "ADD_TO_HISTORY", payload: item })}
+            className="content__details__title"
+          >
+            {item.title}
+          </div>
         </Link>
         <MenuListBox
           items={videoContentMenuItemData}

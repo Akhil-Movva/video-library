@@ -16,7 +16,7 @@ const reduceFunc = (state, action) => {
       }
       if (flag) return state;
 
-      return { ...state, watchLater: [...state.watchLater, action.payload] };
+      return { ...state, watchLater: [...state.watchLater, video] };
     }
 
     case "REMOVE_FROM_WATCH_LATER": {
@@ -61,6 +61,21 @@ const reduceFunc = (state, action) => {
 
       return { ...state, likedVideos: arr, videoList: videoArr };
     }
+
+    case "ADD_TO_HISTORY": {
+      const video = action.payload;
+      let flag = false;
+      for (const item of state.history) {
+        if (item.id === video.id) {
+          flag = true;
+          break;
+        }
+      }
+      if (flag) return state;
+
+      return { ...state, history: [...state.history, video] };
+    }
+
     default:
       return state;
   }
@@ -70,7 +85,8 @@ export const VideoProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reduceFunc, {
     videoList: videos,
     watchLater: [],
-    likedVideos: []
+    likedVideos: [],
+    history: []
   });
   return (
     <VideoContext.Provider value={{ state, dispatch }}>

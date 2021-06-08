@@ -8,9 +8,10 @@ export const videos = [
   },
   {
     id: 2,
-    thumbnail: "https://img.youtube.com/vi/1HAGuju_yKY/mqdefault.jpg",
-    title: "“Float” Full SparkShort | Pixar",
-    url: "https://www.youtube.com/watch?v=1HAGuju_yKY&t=2s&ab_channel=Pixar",
+    thumbnail: "https://img.youtube.com/vi/YTJg8q9Q940/mqdefault.jpg",
+    title:
+      "Nature And Wildlife Video – Bird and animal is beautiful creature on our planet",
+    url: "https://www.youtube.com/watch?v=YTJg8q9Q940",
     isLiked: false
   },
   {

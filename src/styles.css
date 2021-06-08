@@ -25,6 +25,7 @@ header {
   position: sticky;
   top: 0px;
   background-color: white;
+  z-index: 1;
 }
 
 .logo {
@@ -93,7 +94,6 @@ header {
   max-width: 23%;
   margin-right: 1rem;
   margin-bottom: 3rem;
-  cursor: pointer;
   text-align: left;
 }
 
@@ -120,7 +120,8 @@ header {
 
 .watch-later-content__menu-button,
 .content__details__menu-button,
-.liked-video-content__menu-button {
+.liked-video-content__menu-button,
+.history-content__menu-button {
   background-color: inherit;
   border: none;
   cursor: pointer;
@@ -215,10 +216,16 @@ header {
   right: 0.5rem;
 }
 
+.h-menu {
+  top: 2rem;
+  right: 4.5rem;
+}
+
 .menu-listbox__item {
   padding-left: 1.5rem;
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  cursor: pointer;
 }
 
 .menu-listbox__item:hover {
@@ -233,9 +240,9 @@ header {
 .liked-video-content {
   display: flex;
   padding: 0.5rem 0;
-  cursor: pointer;
   position: relative;
   text-align: left;
+  width: 75%;
 }
 
 .watch-later-content:hover {
@@ -255,7 +262,6 @@ header {
 .watch-later-container,
 .liked-videos-container {
   margin: 1rem auto;
-  width: 70%;
 }
 
 .toast {
@@ -266,4 +272,23 @@ header {
   background-color: var(--toast-bgcolor);
   padding: 0.25rem 0.5rem;
   color: var(--toast-color);
+}
+
+.history-container {
+  position: relative;
+  left: 4rem;
+  text-align: left;
+}
+
+.history-content {
+  display: flex;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 75%;
+}
+
+.history-content__img {
+  width: 15rem;
+  height: auto;
+  margin-right: 1rem;
 }

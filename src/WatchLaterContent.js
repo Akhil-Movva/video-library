@@ -18,15 +18,17 @@ export const WatchLaterContent = ({ item }) => {
         className="watch-later-content"
         key={item.id}
       >
-        <Link to={`/video/${item.id}`}>
-          <img
-            className="watch-later-content__img"
-            src={item.thumbnail}
-            alt="thumbnail"
-          />
-        </Link>
+        <div>
+          <Link to={`/video/${item.id}`}>
+            <img
+              className="watch-later-content__img"
+              src={item.thumbnail}
+              alt="thumbnail"
+            />
+          </Link>
+        </div>
         <Link className="content__link" to={`/video/${item.id}`}>
-          <div style={{ width: "75%", textAlign: "left" }}>{item.title}</div>
+          <div style={{ width: "40rem", textAlign: "left" }}>{item.title}</div>
         </Link>
         <MenuListBox
           items={watchLaterContentMenuItemData}
@@ -48,7 +50,7 @@ export const WatchLaterContent = ({ item }) => {
         </button>
       </div>
 
-      <hr style={{ margin: "0.5rem 0" }} />
+      <hr style={{ width: "75%", margin: "0.5rem 0" }} />
     </div>
   );
 };

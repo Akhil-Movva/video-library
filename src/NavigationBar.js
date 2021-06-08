@@ -23,9 +23,15 @@ export const NavigationBar = () => {
         <i className="icon fas fa-photo-video"></i>Library
       </div>
 
-      <div className="navigation-bar__item">
-        <i className=" icon fas fa-history"></i>History
-      </div>
+      <NavLink
+        style={{ textDecoration: "none", color: "inherit", width: "inherit" }}
+        activeStyle={{ backgroundColor: "grey" }}
+        to="/history"
+      >
+        <div className="navigation-bar__item">
+          <i className=" icon fas fa-history"></i>History
+        </div>
+      </NavLink>
 
       <NavLink
         style={{ textDecoration: "none", color: "inherit", width: "inherit" }}

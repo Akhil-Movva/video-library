@@ -1,37 +1,38 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuListBox } from "./MenuListBox";
-import { likedVideoContentMenuItemData } from "./MenuListItemData";
+import { historyContentMenuItemData } from "./MenuListItemData";
 
-export const LikedVideoContent = ({ item }) => {
+export const HistoryContent = ({ item }) => {
   const [visibililty, setVisibility] = useState("hidden");
   const [listBoxDisplay, setListBoxDisplay] = useState("none");
   const listBoxStyle = { display: listBoxDisplay };
 
   const iconStyle = { visibility: visibililty };
+
   return (
     <div>
       <div
         onMouseOver={() => setVisibility("visible")}
         onMouseLeave={() => setVisibility("hidden")}
-        className="liked-video-content"
+        className="history-content"
         key={item.id}
       >
         <Link to={`/video/${item.id}`}>
           <img
-            className="liked-video-content__img"
+            className="history-content__img"
             src={item.thumbnail}
             alt="thumbnail"
           />
         </Link>
         <Link className="content__link" to={`/video/${item.id}`}>
-          <div style={{ width: "40rem", textAlign: "left" }}>{item.title}</div>
+          <div style={{ width: "25rem" }}>{item.title}</div>
         </Link>
         <MenuListBox
-          items={likedVideoContentMenuItemData}
+          items={historyContentMenuItemData}
           video={item}
           listBoxStyle={listBoxStyle}
-          className="lv-menu menu-listbox"
+          className="h-menu menu-listbox"
         />
         <button
           onClick={() => {
@@ -41,13 +42,11 @@ export const LikedVideoContent = ({ item }) => {
               setListBoxDisplay("block");
             }
           }}
-          className="liked-video-content__menu-button"
+          className="history-content__menu-button"
         >
           <i style={iconStyle} className="fas fa-ellipsis-v"></i>
         </button>
       </div>
-
-      <hr style={{ width: "75%", margin: "0.5rem 0" }} />
     </div>
   );
 };
