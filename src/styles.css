@@ -121,7 +121,8 @@ header {
 .watch-later-content__menu-button,
 .content__details__menu-button,
 .liked-video-content__menu-button,
-.history-content__menu-button {
+.history-content__menu-button,
+.search-content__menu-button {
   background-color: inherit;
   border: none;
   cursor: pointer;
@@ -216,6 +217,7 @@ header {
   right: 0.5rem;
 }
 
+.s-menu,
 .h-menu {
   top: 2rem;
   right: 4.5rem;
@@ -274,21 +276,39 @@ header {
   color: var(--toast-color);
 }
 
+.search-videos-container,
 .history-container {
   position: relative;
   left: 4rem;
   text-align: left;
 }
 
-.history-content {
+.search-videos-container {
+  margin-top: 3rem;
+}
+.history-content,
+.search-content {
   display: flex;
   margin-bottom: 1rem;
   position: relative;
-  width: 75%;
+}
+
+.history-content {
+  width: 60%;
+}
+
+.search-content {
+  width: 80%;
 }
 
 .history-content__img {
   width: 15rem;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.search-video-content__img {
+  width: 20rem;
   height: auto;
   margin-right: 1rem;
 }

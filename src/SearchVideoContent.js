@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MenuListBox } from "./MenuListBox";
-import { historyContentMenuItemData } from "./MenuListItemData";
+import { searchVideoContentMenuItemData } from "./MenuListItemData";
 
-export const HistoryContent = ({ item }) => {
+export const SearchVideoContent = ({ item }) => {
   const [visibililty, setVisibility] = useState("hidden");
   const [listBoxDisplay, setListBoxDisplay] = useState("none");
   const listBoxStyle = { display: listBoxDisplay };
@@ -15,26 +15,26 @@ export const HistoryContent = ({ item }) => {
       <div
         onMouseOver={() => setVisibility("visible")}
         onMouseLeave={() => setVisibility("hidden")}
-        className="history-content"
+        className="search-content"
         key={item.id}
       >
         <Link to={`/video/${item.id}`}>
           <img
-            className="history-content__img"
+            className="search-video-content__img"
             src={item.thumbnail}
             alt="thumbnail"
           />
         </Link>
         <Link className="content__link" to={`/video/${item.id}`}>
-          <div style={{ width: "25rem", marginRight: "0.5rem" }}>
+          <div style={{ width: "35rem", marginRight: "0.5rem" }}>
             {item.title}
           </div>
         </Link>
         <MenuListBox
-          items={historyContentMenuItemData}
+          items={searchVideoContentMenuItemData}
           video={item}
           listBoxStyle={listBoxStyle}
-          className="h-menu menu-listbox"
+          className="s-menu menu-listbox"
         />
         <button
           onClick={() => {
@@ -44,7 +44,7 @@ export const HistoryContent = ({ item }) => {
               setListBoxDisplay("block");
             }
           }}
-          className="history-content__menu-button"
+          className="search-content__menu-button"
         >
           <i style={iconStyle} className="fas fa-ellipsis-v"></i>
         </button>

@@ -76,6 +76,18 @@ const reduceFunc = (state, action) => {
       return { ...state, history: [...state.history, video] };
     }
 
+    case "SEARCH_VIDEOS": {
+      let searchArr = [];
+      for (let video of state.videoList) {
+        if (
+          video.title.toLowerCase().indexOf(action.payload.toLowerCase()) !== -1
+        )
+          searchArr = [...searchArr, video];
+      }
+
+      return { ...state, searchVideos: searchArr };
+    }
+
     default:
       return state;
   }
@@ -86,7 +98,8 @@ export const VideoProvider = ({ children }) => {
     videoList: videos,
     watchLater: [],
     likedVideos: [],
-    history: []
+    history: [],
+    searchVideos: []
   });
   return (
     <VideoContext.Provider value={{ state, dispatch }}>

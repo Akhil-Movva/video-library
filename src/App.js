@@ -7,6 +7,7 @@ import { Container } from "./Container";
 import { WatchLater } from "./WatchLater";
 import { LikedVideos } from "./LikedVideos";
 import { History } from "./History";
+import { SearchVideos } from "./SearchVideos";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="*" element={<NoMatch />} />
         <Route path="/likedVideos" element={<LikedVideos />} />
         <Route path="/history" element={<History />} />
+        <Route path="/searchvideos" element={<SearchVideos />} />
       </Routes>
     </div>
   );
